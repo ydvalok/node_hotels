@@ -1,0 +1,5 @@
+# ignore node_moudule directory
+
+node_moudule/
+
+# other entries

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 // MongoDB connection URL (Atlas)
-const mongoURL = 'mongodb+srv://alokyadav:alokyadav200609124@cluster0.5ddawqa.mongodb.net/hotels';
+
 
 // Connect to MongoDB
 mongoose.connect(mongoURL);

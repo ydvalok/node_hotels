@@ -57,7 +57,7 @@ router.put('/:id', async(req,res)=>{
 router.get('/:workType',async(req,res)=>{
  try{
    const workType= req.params.workType;
- if (
+ if ( 
       workType === 'Chef' ||
       workType === 'Waiter' ||
       workType === 'Manager' ||

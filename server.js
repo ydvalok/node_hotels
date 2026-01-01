@@ -4,6 +4,7 @@ const db = require('./db');
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
+const PORT = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
   res.send('welcome to server');

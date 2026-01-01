@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
+require('dotenv').config()
 
 // MongoDB connection URL (Atlas)
-
+const mongoURL = process.env.MONGODB_URL;
 
 // Connect to MongoDB
 mongoose.connect(mongoURL);

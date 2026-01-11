@@ -1,7 +1,6 @@
 const express =require('express');
 const router = express.Router()
 const MenuItem = require('./../Models/MenuItem');
-const person = require('../Models/person');
 
 router.post('/',async(req,res)=>{
   try{
@@ -35,4 +34,5 @@ router.get('/taste/:taste', async (req, res) => {
   }
 });
 
-module.exports = router; 
+module.exports = router;  
+

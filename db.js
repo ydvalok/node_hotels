@@ -1,27 +1,24 @@
-const mongoose = require('mongoose');
-require('dotenv').config()
+const mongoose = require("mongoose");
+require("dotenv").config();
 
-// MongoDB connection URL (Atlas)
 const mongoURL = process.env.MONGODB_URL;
 
-// Connect to MongoDB
-mongoose.connect(mongoURL);
+async function connectDB() {
+  try {
+    await mongoose.connect(mongoURL);
+    console.log(" Connected to MongoDB Atlas");
+  } catch (error) {
+    console.error(" MongoDB connection error:", error.message);
+    process.exit(1); // stop app if DB fails
+  }
+}
 
-// Connection instance
+connectDB();
+
 const db = mongoose.connection;
 
-// Event listeners
-db.on('connected', () => {
-  console.log('Connected to MongoDB server');
+db.on("disconnected", () => {
+  console.log("MongoDB disconnected");
 });
 
-db.on('error', (err) => {
-  console.log('MongoDB connection error:', err);
-});
-
-db.on('disconnected', () => {
-  console.log(' MongoDB disconnected');
-});
-
-// Export database connection
 module.exports = db;
